@@ -143,6 +143,18 @@ def generate_images(
     w_frames: int,
     output: str
 ):
+    generate_images_grid(network_pkl, seeds, shuffle_seed, truncation_psi, grid, num_keyframes, w_frames, output)
+
+def generate_images_grid(
+    network_pkl: str,
+    seeds: List[int],
+    shuffle_seed: Optional[int],
+    truncation_psi: float,
+    grid: Tuple[int,int],
+    num_keyframes: Optional[int],
+    w_frames: int,
+    output: str
+):
     """Render a latent vector interpolation video.
 
     Examples:
